@@ -1,8 +1,11 @@
-import Image from "next/image";
 import { CtaBanner } from "@/components/sections/CtaBanner";
-import { PageHeader } from "@/components/ui/PageHeader";
-import { Section } from "@/components/ui/Section";
+import { ProductFeatured } from "@/components/sections/ProductFeatured";
+import { ProductHero } from "@/components/sections/ProductHero";
+import { ProductItemCard } from "@/components/sections/ProductItemCard";
+import { Container } from "@/components/ui/Container";
+import { pageCta, productPage } from "@/content/pages";
 import { getCategory } from "@/content/products";
+import { cn } from "@/lib/cn";
 
 type CategoryPageProps = {
   slug: string;
@@ -10,44 +13,62 @@ type CategoryPageProps = {
 
 export function CategoryPage({ slug }: CategoryPageProps) {
   const category = getCategory(slug);
+  const large = category.layout === "two";
 
   return (
     <>
-      <PageHeader title={category.title} description={category.intro} />
-      <Section>
-        <div className="grid gap-10 lg:grid-cols-2 lg:items-start">
-          <div className="relative aspect-[1024/909] w-full overflow-hidden rounded-card">
-            <Image
-              src={category.image}
-              alt={category.title}
-              fill
-              sizes="(min-width: 1024px) 560px, 100vw"
-              className="object-cover"
-            />
+      <ProductHero watermark={category.title} image={category.heroImage} />
+
+      <section id="product-list" className="scroll-mt-28 bg-white">
+        <Container className="flex flex-col gap-10 pt-[72px] pb-[88px]">
+          <div className="flex flex-col gap-4 leading-[1.3] font-bold">
+            <p className="text-sm text-brand-700 uppercase">
+              {productPage.label}
+            </p>
+            <h2 className="text-[32px] uppercase md:text-[40px]">
+              {category.title}
+            </h2>
           </div>
 
-          {category.items.length > 0 ? (
-            <ul className="space-y-4">
-              {category.items.map((item) => (
-                <li
-                  key={item.title}
-                  className="rounded-card border border-line p-6"
+          <div className="flex flex-col gap-8">
+            {category.featured && (
+              <ProductFeatured featured={category.featured} />
+            )}
+
+            {category.groups.map((group, index) => (
+              <div
+                key={group.title ?? index}
+                className={cn(
+                  "flex flex-col gap-8",
+                  index > 0 && "border-t border-line pt-8",
+                )}
+              >
+                {group.title && (
+                  <h3 className="text-2xl leading-[1.3] font-bold">
+                    {group.title}
+                  </h3>
+                )}
+                <div
+                  className={cn(
+                    "grid gap-6 md:grid-cols-2",
+                    !large && "lg:grid-cols-3",
+                  )}
                 >
-                  <h2 className="text-xl font-semibold text-brand-900">
-                    {item.title}
-                  </h2>
-                  <p className="mt-2 text-muted">{item.description}</p>
-                </li>
-              ))}
-            </ul>
-          ) : (
-            <p className="text-muted">
-              Contact us for availability, specifications, and pricing.
-            </p>
-          )}
-        </div>
-      </Section>
-      <CtaBanner />
+                  {group.items.map((item) => (
+                    <ProductItemCard
+                      key={item.title}
+                      item={item}
+                      large={large}
+                    />
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
+        </Container>
+      </section>
+
+      <CtaBanner {...pageCta} />
     </>
   );
 }

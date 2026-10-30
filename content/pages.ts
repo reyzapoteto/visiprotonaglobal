@@ -96,3 +96,14 @@ export const contactPage = {
     submit: "Send Message",
   },
 } as const;
+
+export const productPage = {
+  hero: {
+    accent: "High-Quality",
+    title: "Paper Solutions for Every Industry",
+    description:
+      "From raw materials to finished packaging, we provide durable, reliable, and customizable paper products to support your business needs.",
+    cta: { label: "Explore Products", href: "#product-list" },
+  },
+  label: "Our Products",
+} as const;

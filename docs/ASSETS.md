@@ -23,4 +23,22 @@ File Figma: `3Bnbop8BjrqIrA2ofDYJr7` (VPG Project), page **Presentation**. Aset 
 | `icons/potted-plant.svg`, `handshake.svg`, `box-arrow-down.svg` | `225:522`, `225:530`, `225:538`     | Kartu Mission                                  |
 | `icons/phone.svg`, `envelope-simple.svg`, `map-trifold.svg`     | `156:180`, `156:183`, `156:186`     | Kartu kontak                                   |
 
+## Halaman Product (`public/images/products/*.jpg`)
+
+Ekspor gambar kartu (frame bernama `Frame 21` / `Frame 17` di setiap item) sebagai JPG dengan nama di bawah. Node dari frame desktop atau mobile yang terbaca.
+
+| File                                                                                                                      | Node Figma                                                                         |
+| ------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- |
+| `hero-raw-materials.jpg`                                                                                                  | `205:93`                                                                           |
+| `hero-finished-paper-packaging.jpg`                                                                                       | `137:672`                                                                          |
+| `hero-industrial-chemicals.jpg`, `hero-export-division.jpg`                                                               | `Rectangle 3` di frame `205:322` dan `205:870` (belum terbaca, cek mana yang mana) |
+| `sack-kraft-paper.jpg`                                                                                                    | `205:108`                                                                          |
+| `bleached-sack-kraft-paper.jpg`, `kraft-liner-board.jpg`, `duplex-and-ivory-board.jpg`                                    | `205:134`, `205:139`, `205:144`                                                    |
+| `label-stickers.jpg`, `wet-strength-paper.jpg`, `pet-film.jpg`                                                            | `205:150`, `205:155`, `205:160`                                                    |
+| `hotmelt-adhesives.jpg`, `fatty-alcohol-ethoxylates.jpg`, `soap-noodles.jpg`, `alkyl-ketene-dimer.jpg`, `surfactants.jpg` | `226:738`, `226:743`, `226:749`, `226:754`, `226:759`                              |
+| `white-top-liner-board.jpg`, `saturating-kraft-paper.jpg`                                                                 | `226:771`, `226:776`                                                               |
+| `laid-paper.jpg`, `carbonless-paper.jpg`, `sublimation-paper.jpg`, `greaseproof-paper.jpg`                                | `226:785`, `226:790`, `226:795`, `226:800`                                         |
+| `shopping-bags.jpg`, `food-bags.jpg`, `corrugated-bags-boxes.jpg`, `cement-bags.jpg`                                      | `189:414`, `189:419`, `189:426`, `189:431`                                         |
+| `icons/arrows-out-simple.svg`, `icons/wind.svg`                                                                           | `205:121`, `205:127`                                                               |
+
 Cara ekspor manual di Figma: pilih layer, panel Export di kanan, pilih format (SVG untuk ikon dan logo, JPG untuk foto, PNG untuk hero), lalu Export.
