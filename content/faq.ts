@@ -1,34 +1,38 @@
-// Questions come from the Figma design. TODO(verify): the design only shows
-// collapsed items, so the answers are drafts based on the live site.
+// Questions and order come from the Figma design; answers summarize the live site.
 export const faqs = [
   {
     question: "What sizes of the paper rolls are available?",
     answer:
-      "Widths range from 500 to 2,400 mm and weights from 60 to 200+ gsm.",
+      "We offer a range of standard widths, grammages, and grades. Contact our sales team to confirm the dimensions currently in ready stock.",
   },
   {
     question: "Can I order a custom size?",
-    answer: "Custom sizes are available on request.",
+    answer:
+      "Yes, through our custom sourcing service. Standard slit widths may be available from stock, while non-standard specifications can carry minimum order quantities.",
   },
   {
     question: "Can the paper rolls be delivered to my warehouse?",
     answer:
-      "Yes, we deliver directly to your warehouse. Contact us for details.",
+      "Yes. We deliver across Indonesia and handle the full logistics for import orders. Lead times are confirmed when you send an inquiry.",
   },
   {
     question: "What if I change my mind after purchasing the paper rolls?",
-    answer: "Changes, returns, and cancellations are handled case by case.",
+    answer:
+      "Returns and changes are handled case by case. For stock items, please contact us before dispatch. Custom and import orders may not be cancellable.",
   },
   {
     question: "What is the price of our paper?",
-    answer: "Prices are quoted per inquiry. Contact us with your requirements.",
+    answer:
+      "Pricing depends on grade, grammage, width, volume, and raw material costs, so we provide a quotation for each inquiry.",
   },
   {
     question: "Can I get a sample before placing a large order?",
-    answer: "Please contact our team to ask about samples.",
+    answer:
+      "Yes, samples can be requested for evaluation, subject to current stock availability.",
   },
   {
     question: "Can I get a discount if I order in larger quantities?",
-    answer: "Yes, bulk orders may qualify for a discount. Ask us for a quote.",
+    answer:
+      "Yes. Bulk orders receive volume-based tiered pricing, and we welcome long-term supply arrangements.",
   },
 ] as const;

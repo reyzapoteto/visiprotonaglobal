@@ -18,8 +18,8 @@ export function AboutSection() {
         </div>
 
         <div className="flex flex-col gap-6 lg:flex-row">
-          {site.stats.map((stat) => (
-            <StatCounter key={stat.label} {...stat} />
+          {site.stats.map(({ id, ...stat }) => (
+            <StatCounter key={id} {...stat} />
           ))}
         </div>
       </Container>

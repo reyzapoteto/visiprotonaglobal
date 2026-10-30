@@ -51,19 +51,6 @@ export function Footer() {
               </li>
             </ul>
           </div>
-
-          <div className="flex w-[145px] flex-col gap-4">
-            <h2 className={heading}>Follow Us</h2>
-            <ul className="flex gap-4">
-              {site.socials.map((social) => (
-                <li key={social.label}>
-                  <a href={social.href} aria-label={social.label}>
-                    <Image src={social.icon} alt="" width={24} height={24} />
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
         </div>
       </div>
     </footer>
