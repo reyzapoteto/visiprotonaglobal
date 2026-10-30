@@ -41,4 +41,17 @@ Ekspor gambar kartu (frame bernama `Frame 21` / `Frame 17` di setiap item) sebag
 | `shopping-bags.jpg`, `food-bags.jpg`, `corrugated-bags-boxes.jpg`, `cement-bags.jpg`                                      | `189:414`, `189:419`, `189:426`, `189:431`                                         |
 | `icons/arrows-out-simple.svg`, `icons/wind.svg`                                                                           | `205:121`, `205:127`                                                               |
 
+## Status
+
+Sudah ada di `public/images`: aset homepage, logo, semua ikon, halaman About, Contact Us, dan seluruh gambar Raw Materials (hero dan 7 foto).
+
+**Masih kurang** (perlu ekspor dari Figma, kuota Figma MCP sedang habis):
+
+- `products/hero-industrial-chemicals.jpg`, `hero-export-division.jpg`, `hero-finished-paper-packaging.jpg`
+- Industrial Chemicals: `hotmelt-adhesives`, `fatty-alcohol-ethoxylates`, `soap-noodles`, `alkyl-ketene-dimer`, `surfactants`
+- Export Division: `white-top-liner-board`, `saturating-kraft-paper`, `laid-paper`, `carbonless-paper`, `sublimation-paper`, `greaseproof-paper`
+- Finished Paper Packaging: `shopping-bags`, `food-bags`, `corrugated-bags-boxes`, `cement-bags`
+
+Semua berekstensi `.jpg` dan berada di `public/images/products/`.
+
 Cara ekspor manual di Figma: pilih layer, panel Export di kanan, pilih format (SVG untuk ikon dan logo, JPG untuk foto, PNG untuk hero), lalu Export.
