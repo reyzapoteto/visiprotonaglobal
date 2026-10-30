@@ -1,38 +1,42 @@
 import Image from "next/image";
 import { Button } from "@/components/ui/Button";
-import { Container } from "@/components/ui/Container";
-import { site } from "@/content/site";
-import { asset } from "@/lib/assets";
+import { home } from "@/content/home";
 
-// TODO(verify): the live hero also uses KRAFT-PAPER-ROLL-1.svg; check its placement.
 export function Hero() {
-  return (
-    <section className="bg-brand-100 py-16 md:py-24">
-      <Container className="grid items-center gap-10 lg:grid-cols-2">
-        <div>
-          <h1 className="text-4xl font-bold text-brand-900 md:text-5xl lg:text-6xl lg:leading-[1.1]">
-            {site.tagline}
-          </h1>
-          <p className="mt-6 max-w-xl text-lg text-muted">
-            Indonesia&apos;s trusted supplier of kraft paper, duplex board, and
-            custom packaging.
-          </p>
-          <Button href="#productsection" className="mt-8">
-            View Products
-          </Button>
-        </div>
+  const { accent, title, description, cta, image, watermark } = home.hero;
 
-        <div className="relative aspect-square w-full">
-          <Image
-            src={asset("Group-1.png")}
-            alt="Kraft paper rolls"
-            fill
-            priority
-            sizes="(min-width: 1024px) 560px, 100vw"
-            className="object-contain"
-          />
+  return (
+    <section className="relative h-[800px] overflow-hidden bg-brand-100">
+      <p
+        aria-hidden="true"
+        className="pointer-events-none absolute top-[calc(50%+152px)] left-[calc(50%-468px)] text-[150px] leading-[1.3] font-bold whitespace-nowrap text-black/5 xl:top-[calc(50%+112px)] xl:left-[calc(50%-937px)] xl:text-[200px]"
+      >
+        {watermark}
+      </p>
+
+      <div className="absolute top-[462px] left-8 aspect-[666/834] w-[411px] xl:top-[164px] xl:left-[746px] xl:w-[666px]">
+        <Image
+          src={image}
+          alt="Kraft paper rolls"
+          fill
+          priority
+          sizes="(min-width: 1280px) 666px, 411px"
+          className="object-contain"
+        />
+      </div>
+
+      <div className="absolute top-[175px] left-6 flex w-[394px] max-w-[calc(100%-48px)] flex-col gap-6 xl:left-[62px] xl:w-[759px]">
+        <h1 className="text-[32px] leading-[1.3] font-medium text-ink xl:text-[56px]">
+          <span className="font-semibold text-brand-700 italic">{accent}</span>{" "}
+          {title}
+        </h1>
+        <div className="flex flex-col gap-8">
+          <p className="max-w-[539px] leading-[1.8] text-muted">
+            {description}
+          </p>
+          <Button href="#productsection">{cta}</Button>
         </div>
-      </Container>
+      </div>
     </section>
   );
 }

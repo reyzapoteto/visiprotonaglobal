@@ -1,84 +1,54 @@
-# DESIGN.md – Visi Protona Global (Next.js + Tailwind)
+# DESIGN.md – Visi Protona Global
 
-Sumber kebenaran visual untuk build ulang https://visiprotonaglobal.com/.
+Sumber: file Figma `3Bnbop8BjrqIrA2ofDYJr7` (VPG Project), page Presentation. Desktop 1440 px, mobile 440 px. Token ada di `app/globals.css`.
 
-> **Status token:** ✅ = terbaca dari situs asli · ⚠️ = USULAN sementara (belum bisa diverifikasi dari situs live).
-> Ganti semua ⚠️ setelah inspect DevTools (`--e-global-color-*`, computed font). Hanya `tailwind.config` yang perlu diubah; komponen tidak.
+## Warna
 
-## 1. Brand
+| Token Tailwind         | Hex                  | Pakai untuk                                                         |
+| ---------------------- | -------------------- | ------------------------------------------------------------------- |
+| `brand-700`            | `#224e32`            | Hijau tua: aksen italic "Reliable", label `//`, banner Our Services |
+| `brand-500`            | `#317249`            | Hijau tombol utama                                                  |
+| `ink` / `brand-900`    | `#1e1e1e`            | Teks utama, header, banner CTA, footer                              |
+| `muted`                | `#777777`            | Teks deskripsi                                                      |
+| `brand-100`            | `#f4f4f4`            | Latar hero                                                          |
+| `ink/5`                | `rgba(30,30,30,.05)` | Kartu statistik, item FAQ                                           |
+| `ink/72`               | `rgba(30,30,30,.72)` | Label statistik                                                     |
+| `white/56`, `white/72` |                      | Teks di atas latar gelap                                            |
+| `black/5`              | `rgba(0,0,0,.05)`    | Teks watermark besar                                                |
 
-- Perusahaan: pemasok & importir kraft paper, paper bag, raw paper roll (Indonesia) ✅
-- Karakter: industrial, bersih, terpercaya, B2B ⚠️
-- Logo: `/images/vpg-logo.png` (header) dan versi 1024px (footer) ✅
-  - Sumber: `wp-content/uploads/2026/06/VPG_R03_color_transparent(-1024x576).png`
-  - Favicon: `VPG_512x512_white-300x300.png`
+## Tipografi
 
-## 2. Warna (⚠️ usulan, tema kraft paper)
+Font: **Plus Jakarta Sans** (400, 500, 600, 700; italic 600/700) via `next/font/google`.
 
-| Token       | Hex     | Pakai untuk                     |
-| ----------- | ------- | ------------------------------- |
-| `brand-900` | #2B1D12 | teks heading, footer            |
-| `brand-700` | #7A4E2D | tombol utama hover              |
-| `brand-500` | #A9713F | tombol utama, aksen, label `//` |
-| `brand-100` | #F3E9DC | latar section selang-seling     |
-| `ink`       | #1F2937 | teks body                       |
-| `muted`     | #6B7280 | teks sekunder                   |
-| `surface`   | #FFFFFF | latar utama, kartu              |
-| `line`      | #E5E7EB | border, divider                 |
+| Elemen             | Desktop / Mobile | Gaya                                                           |
+| ------------------ | ---------------- | -------------------------------------------------------------- |
+| Hero H1            | 56 / 32 px       | Medium, leading 1.3; kata "Reliable" semibold italic hijau tua |
+| Hero deskripsi     | 16 px            | Regular, leading 1.8, `muted`, lebar 539 px                    |
+| Label section      | 14 px            | Bold italic, uppercase, awalan `//  ` (dua spasi)              |
+| H2 section         | 40 / 32 px       | Bold, uppercase, leading 1.3                                   |
+| Paragraf About     | 24 px            | Leading 2; kalimat pertama semibold `ink`                      |
+| Angka statistik    | 40 px            | Semibold; label 20 px                                          |
+| Judul kartu produk | 24 px            | Bold, uppercase                                                |
+| Item layanan       | 24 px            | Bold, uppercase, daftar bernomor                               |
+| Pertanyaan FAQ     | 20 px            | Semibold                                                       |
+| Tombol             | 18 px            | Medium, putih                                                  |
+| Watermark          | 200 / 150 px     | Bold, `black/5`                                                |
 
-## 3. Tipografi
+## Layout
 
-- Font: Google Fonts, `display=swap` ✅ (nama font ⚠️ → default usulan **Inter**, via `next/font/google`)
-- Skala (desktop / mobile):
-  - H1 hero: 56 / 36 px, bold, leading 1.1
-  - H2 section: 40 / 28 px, bold
-  - H3 kartu: 22 / 20 px, semibold
-  - Body: 16 px, leading 1.6
-  - Label section: 14 px, uppercase, tracking-widest, awalan `// ` ✅ (contoh `// ABOUT US`)
+- Hero: tinggi 800 px, latar `brand-100`; teks di kiri (62 px desktop, 24 px mobile), gambar gulungan di kanan (desktop) atau di bawah teks (mobile).
+- Konten section: lebar maks 1440 px, padding horizontal 48 px (desktop) / 24 px (mobile).
+- Header: bilah melayang `ink`, tinggi 91 px, margin 16 px dari tepi, radius 4 px.
+- Produk: grid 2 kolom (desktop), 1 kolom (mobile), jarak 24 px; gambar rasio 660:586, radius 4 px.
+- Our Services: banner `brand-700` lebar maks 1410 px, radius 4 px, teks kiri dan foto kanan.
+- FAQ: 2 kolom (desktop), 1 kolom (mobile), jarak 16 px; item padding 24 px, radius 4 px.
+- CTA dan footer: dua kotak `ink` radius 8 px, padding 32 px (24 px untuk CTA mobile), jarak 16 px.
 
-## 4. Layout & spasi
+## Komponen
 
-- Container: max-w 1200 px, padding x 16 (mobile) / 24 (desktop) ⚠️
-- Section: padding y 64 (mobile) / 96 (desktop) ⚠️
-- Breakpoint: 375 · 768 · 1280 · 1440
-- Grid produk: 1 kolom → 2 (md) → 4 (xl) ✅ (4 kartu)
-- Radius: kartu 16 px, tombol 8 px ⚠️; bayangan kartu `shadow-md` ⚠️
+- **Button**: 165 × 55 px, `brand-500`, radius 4 px, bentuk dekoratif di pojok kanan atas (`ButtonDecor`).
+- **StatCounter**: kartu `ink/5`, ikon dalam lingkaran `ink` (32 px, padding 16 px), angka menghitung naik saat terlihat.
+- **ProductCard**: seluruh kartu adalah tautan ke halaman kategori.
+- **FAQ**: `<details>` native, ikon caret 24 px berputar saat terbuka.
 
-## 5. Komponen
-
-| Komponen        | Spesifikasi                                                                                                     |
-| --------------- | --------------------------------------------------------------------------------------------------------------- |
-| Header          | Logo kiri; Home, About, Product Categories (dropdown), tombol **Contact Us** ✅; sticky ⚠️; hamburger di mobile |
-| Dropdown        | Raw Materials, Finished Paper Packaging, Industrial Chemicals, Export Division ✅; hover/focus + keyboard       |
-| Button primer   | bg `brand-500`, teks putih, hover `brand-700`, px 24 py 12                                                      |
-| Button sekunder | outline `brand-500`                                                                                             |
-| Hero            | headline + subheading + tombol _View Products_ (scroll ke produk) + gambar & SVG roll kraft ✅                  |
-| StatCounter     | angka + "+" , hitung naik saat masuk viewport ✅ (nilai ⚠️ ambil dari situs live)                               |
-| ProductCard     | gambar 1024×909 rasio ~9:8, judul, link _Explore_ ✅                                                            |
-| ServiceBlock    | SVG ilustrasi + judul + deskripsi (2 blok) ✅                                                                   |
-| FaqAccordion    | 7 item, satu terbuka, `aria-expanded` ✅                                                                        |
-| CtaBanner       | "Have Questions or Needed Assistance?" + Contact Us ✅, latar `brand-900` ⚠️                                    |
-| Footer          | alamat BSD Tangerang Selatan, quick links, telepon, email ✅                                                    |
-
-## 6. Gerak
-
-- Counter: ease-out 1,5 detik, sekali saja ⚠️
-- Hover kartu: naik 4 px + bayangan ⚠️; transisi 200 ms
-- Hormati `prefers-reduced-motion`.
-
-## 7. Aset gambar ✅
-
-Hero `Group-1.png`, `KRAFT-PAPER-ROLL-1.svg`; kartu `Frame-21-1024x909.jpg` (Raw Materials), `Frame-17-1024x909.jpg` (Industrial Chemicals), `Frame-21-1-1024x909.jpg` (Export Division), `Frame-17-1-1024x909.jpg` (Finished Paper Packaging); layanan `Retail-Supply-of-Paper-Rolls.svg`. Semua di bawah `https://visiprotonaglobal.com/wp-content/uploads/2026/06/`. Unduh ke `public/images/` (perlu Anda unduh/lampirkan; akses dari sini diblokir).
-
-## 8. Pemetaan ke Tailwind
-
-```ts
-// tailwind.config.ts (theme.extend)
-colors: {
-  brand: { 100: "#F3E9DC", 500: "#A9713F", 700: "#7A4E2D", 900: "#2B1D12" },
-  ink: "#1F2937", muted: "#6B7280", line: "#E5E7EB",
-},
-fontFamily: { sans: ["var(--font-sans)", "system-ui", "sans-serif"] },
-maxWidth: { container: "1200px" },
-borderRadius: { card: "16px" },
-```
+Aset gambar: lihat `docs/ASSETS.md`.

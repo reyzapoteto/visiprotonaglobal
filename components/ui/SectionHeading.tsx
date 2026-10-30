@@ -3,31 +3,36 @@ import { cn } from "@/lib/cn";
 type SectionHeadingProps = {
   label: string;
   title: string;
-  description?: string;
-  align?: "left" | "center";
+  tone?: "dark" | "light";
   className?: string;
 };
 
 export function SectionHeading({
   label,
   title,
-  description,
-  align = "left",
+  tone = "dark",
   className,
 }: SectionHeadingProps) {
+  const light = tone === "light";
+
   return (
-    <div
-      className={cn(
-        "max-w-2xl",
-        align === "center" && "mx-auto text-center",
-        className,
-      )}
-    >
-      <p className="text-sm font-semibold tracking-widest text-brand-500 uppercase">
-        {`// ${label}`}
+    <div className={cn("flex flex-col gap-4", className)}>
+      <p
+        className={cn(
+          "text-sm leading-[1.3] font-bold whitespace-pre uppercase italic",
+          light ? "text-white/72" : "text-brand-700",
+        )}
+      >
+        {`//  ${label}`}
       </p>
-      <h2 className="mt-3 text-3xl font-bold uppercase md:text-4xl">{title}</h2>
-      {description && <p className="mt-4 text-muted">{description}</p>}
+      <h2
+        className={cn(
+          "text-[32px] leading-[1.3] font-bold uppercase md:text-[40px]",
+          light ? "text-white" : "text-ink",
+        )}
+      >
+        {title}
+      </h2>
     </div>
   );
 }

@@ -1,57 +1,71 @@
 import Image from "next/image";
 import Link from "next/link";
-import { Container } from "@/components/ui/Container";
 import { footerNav } from "@/content/navigation";
 import { site } from "@/content/site";
-import { asset } from "@/lib/assets";
 
-const linkClass = "hover:text-brand-700 hover:underline";
+const heading = "text-xl leading-[1.3] font-bold text-white";
+const itemList = "flex flex-col gap-3 font-medium leading-[1.8] text-white/72";
 
 export function Footer() {
   return (
-    <footer className="bg-brand-100 py-14">
-      <Container className="grid gap-10 md:grid-cols-3">
-        <div>
+    <footer className="bg-white px-4 pb-4">
+      <div className="mx-auto flex max-w-[1410px] flex-col gap-8 rounded-lg bg-ink p-8 lg:flex-row lg:justify-between">
+        <div className="flex flex-col gap-2">
           <Image
-            src={asset("VPG_R03_color_transparent-1024x576.png")}
+            src="/images/logo.svg"
             alt={site.name}
-            width={1024}
-            height={576}
-            className="h-20 w-auto"
+            width={91}
+            height={91}
           />
-          <p className="mt-4 max-w-xs text-sm text-muted">{site.tagline}</p>
+          <address className="max-w-[438px] leading-[1.8] text-white/56 not-italic">
+            {site.address}
+          </address>
         </div>
 
-        <nav aria-label="Footer">
-          <h2 className="font-semibold text-brand-900">Quick Links</h2>
-          <ul className="mt-3 space-y-2 text-sm">
-            {footerNav.map((item) => (
-              <li key={item.label}>
-                <Link href={item.href} className={linkClass}>
-                  {item.label}
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </nav>
+        <div className="flex flex-col gap-8 lg:flex-row">
+          <nav aria-label="Footer" className="flex w-[145px] flex-col gap-4">
+            <h2 className={heading}>Quick Links</h2>
+            <ul className={itemList}>
+              {footerNav.map((item) => (
+                <li key={item.label}>
+                  <Link href={item.href} className="hover:text-white">
+                    {item.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </nav>
 
-        <address className="text-sm not-italic">
-          <h2 className="font-semibold text-brand-900">Contact</h2>
-          <ul className="mt-3 space-y-2">
-            <li>{site.address}</li>
-            <li>
-              <a href={`tel:${site.phone.href}`} className={linkClass}>
-                {site.phone.display}
-              </a>
-            </li>
-            <li>
-              <a href={`mailto:${site.email}`} className={linkClass}>
-                {site.email}
-              </a>
-            </li>
-          </ul>
-        </address>
-      </Container>
+          <div className="flex flex-col gap-4">
+            <h2 className={heading}>Contact</h2>
+            <ul className={itemList}>
+              <li>
+                <a href={`tel:${site.phone.href}`} className="hover:text-white">
+                  {site.phone.display}
+                </a>
+              </li>
+              <li>
+                <a href={`mailto:${site.email}`} className="hover:text-white">
+                  {site.email}
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <div className="flex w-[145px] flex-col gap-4">
+            <h2 className={heading}>Follow Us</h2>
+            <ul className="flex gap-4">
+              {site.socials.map((social) => (
+                <li key={social.label}>
+                  <a href={social.href} aria-label={social.label}>
+                    <Image src={social.icon} alt="" width={24} height={24} />
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </div>
     </footer>
   );
 }

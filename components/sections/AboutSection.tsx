@@ -1,27 +1,28 @@
-import { Section } from "@/components/ui/Section";
+import { Container } from "@/components/ui/Container";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { StatCounter } from "@/components/ui/StatCounter";
+import { home } from "@/content/home";
 import { site } from "@/content/site";
 
 export function AboutSection() {
+  const { label, title, lead, body } = home.about;
+
   return (
-    <Section id="about">
-      <div className="grid gap-12 lg:grid-cols-2 lg:items-center">
-        <div>
-          <SectionHeading label="About Us" title="Who We Are" />
-          <p className="mt-6 text-muted">
-            We supply and import kraft paper, paper bags, and raw paper rolls
-            for businesses across Indonesia. Our focus is eco-friendly
-            materials, ready stock, and on-time delivery.
+    <section id="about" className="bg-white">
+      <Container className="flex flex-col gap-14 py-[72px]">
+        <div className="flex flex-col gap-10 lg:flex-row lg:justify-between">
+          <SectionHeading label={label} title={title} />
+          <p className="text-2xl leading-[2] text-muted lg:w-[812px]">
+            <span className="font-semibold text-ink">{lead}</span> {body}
           </p>
         </div>
 
-        <div className="grid grid-cols-2 gap-6">
+        <div className="flex flex-col gap-6 lg:flex-row">
           {site.stats.map((stat) => (
             <StatCounter key={stat.label} {...stat} />
           ))}
         </div>
-      </div>
-    </Section>
+      </Container>
+    </section>
   );
 }

@@ -11,17 +11,6 @@ const nextConfig: NextConfig = {
       },
     },
   },
-  images: {
-    // Temporary: assets are hot-linked from the live site.
-    // Remove once files are downloaded to public/images (see lib/assets.ts).
-    remotePatterns: [
-      {
-        protocol: "https",
-        hostname: "visiprotonaglobal.com",
-        pathname: "/wp-content/uploads/**",
-      },
-    ],
-  },
 };
 
 export default nextConfig;

@@ -1,16 +1,23 @@
 "use client";
 
+import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 
 type StatCounterProps = {
   value: number;
   suffix?: string;
   label: string;
+  icon: string;
 };
 
 const DURATION_MS = 1500;
 
-export function StatCounter({ value, suffix = "", label }: StatCounterProps) {
+export function StatCounter({
+  value,
+  suffix = "",
+  label,
+  icon,
+}: StatCounterProps) {
   const ref = useRef<HTMLDivElement>(null);
   const [shown, setShown] = useState(0);
 
@@ -44,17 +51,25 @@ export function StatCounter({ value, suffix = "", label }: StatCounterProps) {
   }, [value]);
 
   return (
-    <div ref={ref}>
-      <p
-        className="text-4xl font-bold text-brand-700 md:text-5xl"
-        aria-label={`${value}${suffix} ${label}`}
-      >
-        <span aria-hidden="true">
-          {shown}
-          {suffix}
-        </span>
-      </p>
-      <p className="mt-1 text-sm text-muted">{label}</p>
+    <div
+      ref={ref}
+      className="flex flex-1 items-center gap-8 rounded-card bg-ink/5 p-8"
+    >
+      <span className="flex shrink-0 rounded-full bg-ink p-4">
+        <Image src={icon} alt="" width={32} height={32} />
+      </span>
+      <div className="flex flex-1 flex-col gap-4 leading-[1.3]">
+        <p
+          className="text-[40px] font-semibold uppercase"
+          aria-label={`${value}${suffix} ${label}`}
+        >
+          <span aria-hidden="true">
+            {shown}
+            {suffix}
+          </span>
+        </p>
+        <p className="text-xl text-ink/72">{label}</p>
+      </div>
     </div>
   );
 }

@@ -1,37 +1,47 @@
 import Image from "next/image";
-import { Section } from "@/components/ui/Section";
 import { SectionHeading } from "@/components/ui/SectionHeading";
+import { home } from "@/content/home";
 import { services } from "@/content/services";
-import { asset } from "@/lib/assets";
 
 export function ServicesSection() {
+  const { label, title, watermark, image } = home.services;
+
   return (
-    <Section id="services">
-      <SectionHeading label="What We Offer" title="Our Services" />
-      <div className="mt-10 grid gap-10 lg:grid-cols-2 lg:items-center">
-        <div className="relative aspect-square w-full max-w-md">
-          <Image
-            src={asset("Retail-Supply-of-Paper-Rolls.svg")}
-            alt=""
-            fill
-            unoptimized
-            className="object-contain"
-          />
+    <section id="services" className="bg-white xl:px-4">
+      <div className="relative mx-auto max-w-[1410px] overflow-hidden rounded-card bg-brand-700 px-6 text-white xl:flex xl:min-h-[647px] xl:gap-10 xl:px-10">
+        <p
+          aria-hidden="true"
+          className="pointer-events-none absolute top-[calc(50%-174px)] -left-[142px] text-[200px] leading-[1.3] font-bold whitespace-nowrap text-black/5 uppercase"
+        >
+          {watermark}
+        </p>
+
+        <div className="relative flex flex-col gap-8 pt-[72px] pb-10 xl:flex-1">
+          <SectionHeading label={label} title={title} tone="light" />
+          <ol className="flex list-decimal flex-col gap-8 ps-9 text-2xl font-bold uppercase">
+            {services.map((service) => (
+              <li key={service.title}>
+                <h3 className="leading-[1.3]">{service.title}</h3>
+                <p className="mt-4 max-w-[516px] text-base leading-[1.8] font-normal text-white/56 normal-case">
+                  {service.description}
+                </p>
+              </li>
+            ))}
+          </ol>
         </div>
-        <ul className="space-y-6">
-          {services.map((service, index) => (
-            <li
-              key={service.title}
-              className="rounded-card border border-line p-6"
-            >
-              <h3 className="text-xl font-semibold text-brand-900">
-                {index + 1}. {service.title}
-              </h3>
-              <p className="mt-2 text-muted">{service.description}</p>
-            </li>
-          ))}
-        </ul>
+
+        <div className="relative pb-14 xl:flex-1 xl:pt-10 xl:pb-10">
+          <div className="relative h-[567px] overflow-hidden rounded-card">
+            <Image
+              src={image}
+              alt="Warehouse stocked with kraft paper rolls"
+              fill
+              sizes="(min-width: 1280px) 600px, 100vw"
+              className="object-cover"
+            />
+          </div>
+        </div>
       </div>
-    </Section>
+    </section>
   );
 }

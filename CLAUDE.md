@@ -25,7 +25,7 @@ Next.js (App Router, Cache Components aktif) · React · TypeScript strict · Ta
 
 ## Styling
 
-10. Hanya utilitas Tailwind dan token dari `app/globals.css` (`bg-brand-500`, `text-ink`, `rounded-card`). Dilarang hex/px acak di JSX dan file CSS tambahan.
+10. Hanya utilitas Tailwind dan token dari `app/globals.css` (`bg-brand-500`, `text-ink`, `rounded-card`). Warna wajib lewat token (dilarang hex di JSX). Nilai arbitrer seperti `w-[539px]` hanya untuk dimensi spesifik dari Figma.
 11. Mobile-first: gaya dasar untuk mobile, tambah `md:`/`lg:`/`xl:`.
 12. Gabungkan class kondisional dengan `cn()` dari `lib/cn.ts`.
 13. Urutan class diatur Prettier (plugin Tailwind). Jangan urutkan manual.

@@ -13,12 +13,12 @@ app/
   api/contact/route.ts    Handler form kontak
   sitemap.ts robots.ts not-found.tsx
 components/
-  ui/         Container, Section, SectionHeading, Button, StatCounter, PageHeader
+  ui/         Container, Section, SectionHeading, Button, ButtonDecor, StatCounter, PageHeader
   layout/     Header, MobileMenu, Footer
   sections/   Hero, AboutSection, ProductsSection, ServicesSection,
               FaqSection, CtaBanner, ProductCard, CategoryPage
   forms/      ContactForm
-content/      site.ts, navigation.ts, products.ts, services.ts, faq.ts
+content/      site.ts, home.ts, navigation.ts, products.ts, services.ts, faq.ts
 lib/          cn.ts, assets.ts, metadata.ts, contact.ts, mailer.ts
 docs/         ARCHITECTURE.md
 ```
