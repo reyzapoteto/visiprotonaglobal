@@ -17,6 +17,7 @@ export async function sendContactEmail(data: ContactInput): Promise<boolean> {
     return true;
   }
 
+  const fullName = `${data.firstName} ${data.lastName}`.trim();
   const response = await fetch("https://api.resend.com/emails", {
     method: "POST",
     headers: {
@@ -27,12 +28,11 @@ export async function sendContactEmail(data: ContactInput): Promise<boolean> {
       from,
       to,
       reply_to: data.email,
-      subject: `New inquiry from ${oneLine(data.name)}`,
+      subject: `New inquiry from ${oneLine(fullName)}`,
       text: [
-        `Name: ${data.name}`,
+        `Name: ${fullName}`,
         `Email: ${data.email}`,
         `Phone: ${data.phone || "-"}`,
-        `Company: ${data.company || "-"}`,
         "",
         data.message,
       ].join("\n"),
