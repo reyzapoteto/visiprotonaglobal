@@ -1,36 +1,30 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Visi Protona Global – Website
 
-## Getting Started
+Situs company profile pemasok kraft paper, paper bag, dan raw paper roll. Next.js + Tailwind CSS.
 
-First, run the development server:
+## Menjalankan
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
+cp .env.example .env.local   # isi sesuai kebutuhan
+npm run dev                  # http://localhost:3000
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Skrip
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+| Perintah                      | Fungsi                                                     |
+| ----------------------------- | ---------------------------------------------------------- |
+| `npm run dev`                 | Server pengembangan                                        |
+| `npm run build` / `npm start` | Build dan jalankan produksi                                |
+| `npm run check`               | Typecheck + lint + cek format (wajib lolos sebelum commit) |
+| `npm run format`              | Format otomatis dengan Prettier                            |
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Dokumen
 
-## Learn More
+- [`CLAUDE.md`](CLAUDE.md): aturan kode
+- [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md): arsitektur dan keputusan
+- [`DESIGN.md`](DESIGN.md): token dan spesifikasi visual
 
-To learn more about Next.js, take a look at the following resources:
+## Yang masih perlu diverifikasi
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Cari `TODO(verify)` di kode. Ringkasnya: angka statistik, teks FAQ persis, isi halaman kategori/About, warna & font asli, dan unduh aset ke `public/images`.
