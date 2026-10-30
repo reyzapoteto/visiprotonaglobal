@@ -1,7 +1,6 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
   cacheComponents: true,
   partialPrefetching: true,
   turbopack: {
@@ -11,6 +10,17 @@ const nextConfig: NextConfig = {
         as: "*.css",
       },
     },
+  },
+  images: {
+    // Temporary: assets are hot-linked from the live site.
+    // Remove once files are downloaded to public/images (see lib/assets.ts).
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "visiprotonaglobal.com",
+        pathname: "/wp-content/uploads/**",
+      },
+    ],
   },
 };
 

@@ -1,36 +1,32 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+/* Design tokens: see DESIGN.md. Values marked provisional there are unverified. */
+@theme {
+  --font-sans: var(--font-inter), system-ui, sans-serif;
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-  /* Design tokens: see DESIGN.md (provisional until verified) */
-  --color-brand-100: #F3E9DC;
-  --color-brand-500: #A9713F;
-  --color-brand-700: #7A4E2D;
-  --color-brand-900: #2B1D12;
-  --color-ink: #1F2937;
-  --color-muted: #6B7280;
-  --color-line: #E5E7EB;
+  --color-brand-100: #f3e9dc;
+  --color-brand-500: #a9713f;
+  --color-brand-700: #7a4e2d;
+  --color-brand-900: #2b1d12;
+  --color-ink: #1f2937;
+  --color-muted: #6b7280;
+  --color-line: #e5e7eb;
+
   --container-site: 1200px;
   --radius-card: 16px;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@layer base {
+  html {
+    scroll-behavior: smooth;
   }
-}
-
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  body {
+    background: #fff;
+    color: var(--color-ink);
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+  }
 }
