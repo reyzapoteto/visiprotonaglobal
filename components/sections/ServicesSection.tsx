@@ -7,7 +7,7 @@ import { asset } from "@/lib/assets";
 export function ServicesSection() {
   return (
     <Section id="services">
-      <SectionHeading label="Our Services" title="Our Services" />
+      <SectionHeading label="What We Offer" title="Our Services" />
       <div className="mt-10 grid gap-10 lg:grid-cols-2 lg:items-center">
         <div className="relative aspect-square w-full max-w-md">
           <Image
@@ -19,13 +19,13 @@ export function ServicesSection() {
           />
         </div>
         <ul className="space-y-6">
-          {services.map((service) => (
+          {services.map((service, index) => (
             <li
               key={service.title}
               className="rounded-card border border-line p-6"
             >
               <h3 className="text-xl font-semibold text-brand-900">
-                {service.title}
+                {index + 1}. {service.title}
               </h3>
               <p className="mt-2 text-muted">{service.description}</p>
             </li>

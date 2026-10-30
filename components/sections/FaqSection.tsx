@@ -5,7 +5,10 @@ import { faqs } from "@/content/faq";
 export function FaqSection() {
   return (
     <Section id="faq" tone="muted">
-      <SectionHeading label="FAQ" title="Frequently Asked Questions" />
+      <SectionHeading
+        label="More About Us"
+        title="Frequently Asked Questions"
+      />
       <div className="mt-10 max-w-3xl space-y-3">
         {faqs.map((item) => (
           <details

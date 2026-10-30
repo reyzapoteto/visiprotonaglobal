@@ -17,7 +17,7 @@ export function Hero() {
             Indonesia&apos;s trusted supplier of kraft paper, duplex board, and
             custom packaging.
           </p>
-          <Button href="#products" className="mt-8">
+          <Button href="#productsection" className="mt-8">
             View Products
           </Button>
         </div>

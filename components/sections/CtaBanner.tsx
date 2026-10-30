@@ -6,7 +6,7 @@ export function CtaBanner() {
   return (
     <Section tone="dark">
       <div className="text-center">
-        <h2 className="text-3xl font-bold md:text-4xl">
+        <h2 className="text-3xl font-bold uppercase md:text-4xl">
           Have Questions or Needed Assistance?
         </h2>
         <Button href={contactLink.href} variant="inverse" className="mt-8">

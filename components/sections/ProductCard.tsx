@@ -25,6 +25,7 @@ export function ProductCard({ category }: ProductCardProps) {
         <h3 className="text-xl font-semibold text-brand-900">
           {category.title}
         </h3>
+        <p className="mt-2 text-sm text-muted">{category.summary}</p>
         <p className="mt-3 text-sm font-semibold text-brand-500 group-hover:text-brand-700">
           Explore <span aria-hidden="true">→</span>
         </p>

@@ -6,7 +6,8 @@ export const site = {
     "Indonesia's trusted supplier of kraft paper, duplex board, and custom packaging. Ready stock, on-time delivery, and import services on behalf of clients.",
   email: "sales@visiprotonaglobal.com",
   phone: { display: "(+62) 813 1950 6815", href: "+6281319506815" },
-  address: "BSD, Tangerang Selatan, Banten, Indonesia",
+  address:
+    "Jalan Taman Tekno BSD Sektor XI Blok O2 No 16, Setu, Tangerang Selatan, Banten 15314, Indonesia",
   // TODO(verify): placeholder numbers; the live site animates these counters.
   stats: [
     { label: "Years Industry Experience", value: 10, suffix: "+" },

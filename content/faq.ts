@@ -24,8 +24,8 @@ export const faqs = [
     answer: "Custom sizes are available on request.",
   },
   {
-    question: "What is your return and cancellation policy?",
-    answer: "Returns and cancellations are handled case by case.",
+    question: "Can I change or cancel my order after purchase?",
+    answer: "Changes, returns, and cancellations are handled case by case.",
   },
   {
     question: "Can I get a sample?",
