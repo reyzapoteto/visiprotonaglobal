@@ -30,8 +30,19 @@ export function Header() {
               </Link>
             ))}
             <div className="group relative">
-              <button type="button" aria-haspopup="true" className={navLink}>
+              <button
+                type="button"
+                aria-haspopup="true"
+                className={`${navLink} flex cursor-pointer items-center gap-1.5`}
+              >
                 Product
+                <Image
+                  src="/images/icons/caret-down.svg"
+                  alt=""
+                  width={16}
+                  height={16}
+                  className="brightness-0 invert transition-transform group-focus-within:rotate-180 group-hover:rotate-180 motion-reduce:transition-none"
+                />
               </button>
               <ul className="invisible absolute top-full left-0 w-64 rounded-card bg-ink p-2 opacity-0 shadow-md transition group-focus-within:visible group-focus-within:opacity-100 group-hover:visible group-hover:opacity-100">
                 {productNav.map((item) => (
