@@ -28,26 +28,26 @@ export const aboutPage = {
   mission: {
     label: "Our Mission",
     title: "Excellence from Source to Supply",
-    image: "/images/mission-sustainability.jpg",
     items: [
       {
         id: "sustainability",
         title: "Sustainability",
         icon: "/images/icons/potted-plant.svg",
+        image: "/images/mission-sustainability.jpg",
         text: "We support eco-friendly practices and promote packaging options that are kinder to the environment.",
       },
       {
         id: "trust",
-        number: "02",
         title: "Trust",
         icon: "/images/icons/handshake.svg",
+        image: "/images/mission-trust.jpg",
         text: "VPG works directly with trusted suppliers and manufacturers, ensuring consistency and transparency in every transaction.",
       },
       {
         id: "flexibility",
-        number: "03",
         title: "Flexibility",
         icon: "/images/icons/box-arrow-down.svg",
+        image: "/images/mission-flexibility.jpg",
         text: "We provide both raw material and ready-made packaging to suit the needs of clients in food, industrial, and retail sectors.",
       },
     ],

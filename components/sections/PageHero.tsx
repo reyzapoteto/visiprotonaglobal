@@ -41,37 +41,43 @@ export function PageHero({
 
   return (
     <section className="relative h-[800px] overflow-hidden bg-brand-100">
-      <p
-        aria-hidden="true"
-        className={`pointer-events-none absolute top-[calc(50%+152px)] left-[calc(50%-468px)] text-[150px] leading-[1.3] font-bold whitespace-nowrap text-black/5 xl:left-[calc(50%-937px)] xl:text-[200px] ${style.watermark}`}
-      >
-        KRAFT PAPER ROLL
-      </p>
-
-      <div
-        className={`absolute top-[462px] right-6 left-6 h-[338px] xl:right-auto ${style.image}`}
-      >
-        <Image
-          src={image}
-          alt={imageAlt}
-          fill
-          priority
-          sizes="(min-width: 1280px) 742px, 100vw"
-          className="object-cover"
-        />
-      </div>
-
-      <div
-        className={`absolute top-[175px] left-6 flex w-[394px] max-w-[calc(100%-48px)] flex-col gap-6 ${style.text}`}
-      >
-        <h1
-          className={`text-[32px] leading-[1.3] font-medium text-ink ${style.heading}`}
+      <div className="relative mx-auto h-full max-w-site">
+        <p
+          aria-hidden="true"
+          className={`pointer-events-none absolute top-[calc(50%+152px)] left-[calc(50%-468px)] text-[150px] leading-[1.3] font-bold whitespace-nowrap text-black/5 xl:left-[calc(50%-937px)] xl:text-[200px] ${style.watermark}`}
         >
-          <span className="font-semibold text-brand-700 italic">{accent}</span>{" "}
-          {title}
-        </h1>
-        <p className="max-w-[539px] leading-[1.8] text-muted">{description}</p>
-        {cta && <Button href={cta.href}>{cta.label}</Button>}
+          KRAFT PAPER ROLL
+        </p>
+
+        <div
+          className={`absolute top-[462px] right-6 left-6 h-[338px] xl:right-auto ${style.image}`}
+        >
+          <Image
+            src={image}
+            alt={imageAlt}
+            fill
+            priority
+            sizes="(min-width: 1280px) 742px, 100vw"
+            className="object-cover"
+          />
+        </div>
+
+        <div
+          className={`absolute top-[175px] left-6 flex w-[394px] max-w-[calc(100%-48px)] flex-col gap-6 ${style.text}`}
+        >
+          <h1
+            className={`text-[32px] leading-[1.3] font-medium text-ink ${style.heading}`}
+          >
+            <span className="font-semibold text-brand-700 italic">
+              {accent}
+            </span>{" "}
+            {title}
+          </h1>
+          <p className="max-w-[539px] leading-[1.8] text-muted">
+            {description}
+          </p>
+          {cta && <Button href={cta.href}>{cta.label}</Button>}
+        </div>
       </div>
     </section>
   );

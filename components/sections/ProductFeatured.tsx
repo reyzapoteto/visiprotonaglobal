@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { Icon } from "@/components/ui/Icon";
 import type { ProductCategory } from "@/content/products";
 
 type ProductFeaturedProps = {
@@ -30,7 +31,7 @@ export function ProductFeatured({ featured }: ProductFeaturedProps) {
             key={item.title}
             className="flex flex-col gap-[18px] bg-brand-100 p-4"
           >
-            <Image src={item.icon} alt="" width={32} height={32} />
+            <Icon src={item.icon} size={32} className="text-brand-500" />
             <div className="flex flex-col gap-3">
               <h3 className="text-2xl leading-[1.5] font-semibold uppercase">
                 {item.title}

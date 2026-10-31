@@ -18,7 +18,7 @@ File Figma: `3Bnbop8BjrqIrA2ofDYJr7` (VPG Project), page **Presentation**. Aset 
 | `icons/button-decor.svg`                                        | `71:397` (isi grup di dalam tombol) | Tombol utama                                   |
 | `about-hero.png`                                                | `132:291`                           | Hero About                                     |
 | `about-1.jpg`, `about-2.jpg`, `about-3.jpg`                     | `132:299`, `132:300`, `132:301`     | Foto di bawah "Who We Are"                     |
-| `mission-sustainability.jpg`                                    | `225:520` (gambar latar)            | Kartu Sustainability                           |
+| `mission-sustainability.jpg`                                    | `225:520` (gambar latar)            | Kartu Sustainability (aktif)                   |
 | `contact-hero.png`                                              | `155:91`                            | Hero Contact Us                                |
 | `icons/potted-plant.svg`, `handshake.svg`, `box-arrow-down.svg` | `225:522`, `225:530`, `225:538`     | Kartu Mission                                  |
 | `icons/phone.svg`, `envelope-simple.svg`, `map-trifold.svg`     | `156:180`, `156:183`, `156:186`     | Kartu kontak                                   |
@@ -47,6 +47,7 @@ Sudah ada di `public/images`: aset homepage, logo, semua ikon, halaman About, Co
 
 **Masih kurang** (perlu ekspor dari Figma, kuota Figma MCP sedang habis):
 
+- `mission-trust.jpg` (node di frame `LISTING` `225:571`) dan `mission-flexibility.jpg` (`225:599`): foto kartu Trust dan Flexibility saat aktif
 - `products/hero-industrial-chemicals.jpg`, `hero-export-division.jpg`, `hero-finished-paper-packaging.jpg`
 - Industrial Chemicals: `hotmelt-adhesives`, `fatty-alcohol-ethoxylates`, `soap-noodles`, `alkyl-ketene-dimer`, `surfactants`
 - Export Division: `white-top-liner-board`, `saturating-kraft-paper`, `laid-paper`, `carbonless-paper`, `sublimation-paper`, `greaseproof-paper`
