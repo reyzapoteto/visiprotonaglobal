@@ -47,7 +47,7 @@ Sudah ada di `public/images`: aset homepage, logo, semua ikon, halaman About, Co
 
 **Masih kurang** (perlu ekspor dari Figma, kuota Figma MCP sedang habis):
 
-- `mission-trust.jpg` (node di frame `LISTING` `225:571`) dan `mission-flexibility.jpg` (`225:599`): foto kartu Trust dan Flexibility saat aktif
+- `mission-trust.jpg` dan `mission-flexibility.jpg` sementara dipotong dari screenshot desain (871 px lebar, agak buram di layar retina). Ganti dengan ekspor Figma dari frame `LISTING` `225:571` dan `225:599` kalau kuota sudah reset.
 - `products/hero-industrial-chemicals.jpg`, `hero-export-division.jpg`, `hero-finished-paper-packaging.jpg`
 - Industrial Chemicals: `hotmelt-adhesives`, `fatty-alcohol-ethoxylates`, `soap-noodles`, `alkyl-ketene-dimer`, `surfactants`
 - Export Division: `white-top-liner-board`, `saturating-kraft-paper`, `laid-paper`, `carbonless-paper`, `sublimation-paper`, `greaseproof-paper`

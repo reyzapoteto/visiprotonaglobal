@@ -9,7 +9,11 @@ export function MissionSection() {
   return (
     <section className="bg-white">
       <Container className="flex flex-col gap-12 pt-10 pb-[72px]">
-        <SectionHeading label={label} title={title} />
+        <SectionHeading
+          label={label}
+          title={title}
+          className="lg:self-center"
+        />
         <MissionCards items={items} />
       </Container>
     </section>
