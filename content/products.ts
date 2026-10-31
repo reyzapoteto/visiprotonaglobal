@@ -36,8 +36,8 @@ const img = (name: string) => `/images/products/${name}.jpg`;
 
 // Order matches the homepage grid. Everything comes from the Figma design.
 // TODO(verify): the Industrial Chemicals and Export Division heroes are plain
-// photos, not the cutouts from Figma; soap-noodles.jpg is still missing; and the
-// desktop layout of those two pages was built from their mobile frames.
+// photos, not the cutouts from Figma, and the desktop layout of those two pages
+// was built from their mobile frames.
 export const productCategories: ProductCategory[] = [
   {
     slug: "raw-materials",

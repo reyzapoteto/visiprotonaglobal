@@ -47,7 +47,6 @@ Sudah ada di `public/images`: aset homepage, logo, semua ikon, halaman About, Co
 
 **Masih kurang:**
 
-- `products/soap-noodles.jpg` (Industrial Chemicals, Soap Noodles): belum ada fotonya.
 - `mission-trust.jpg` dan `mission-flexibility.jpg` sementara dipotong dari screenshot desain (871 px lebar, agak buram di layar retina). Ganti dengan ekspor Figma dari frame `LISTING` `225:571` dan `225:599`.
 - Hero Industrial Chemicals dan Export Division sementara memakai foto biasa (`hero-industrial-chemicals.jpg`, `hero-export-division.jpg`), bukan cutout transparan seperti di Figma. Hero Finished Paper Packaging memakai `hero-raw-materials.jpg` (kotak kardus yang sama dengan di desain).
 - Foto produk lain berasal dari 21 foto yang Anda kirim (660 px lebar), jadi bisa terlihat kurang tajam di layar retina. Ganti dengan ekspor 2x dari Figma kalau tersedia.
