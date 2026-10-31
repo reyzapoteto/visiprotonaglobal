@@ -13,13 +13,14 @@ app/
   api/contact/route.ts    Handler form kontak
   sitemap.ts robots.ts not-found.tsx
 components/
-  ui/         Container, Section, SectionHeading, Button, ButtonDecor, StatCounter, PageHeader
+  ui/         Container, SectionHeading, Button, ButtonDecor, Icon, StatCounter
   layout/     Header, MobileMenu, Footer
-  sections/   Hero, AboutSection, ProductsSection, ServicesSection,
-              FaqSection, CtaBanner, ProductCard, CategoryPage
+  sections/   Hero, PageHero, ProductHero, AboutSection, AboutIntro, MissionSection,
+              MissionCards, ProductsSection, ProductCard, ServicesSection, FaqSection,
+              CtaBanner, ContactInfo, CategoryPage, ProductItemCard, ProductFeatured
   forms/      ContactForm
-content/      site.ts, home.ts, navigation.ts, products.ts, services.ts, faq.ts
-lib/          cn.ts, assets.ts, metadata.ts, contact.ts, mailer.ts
+content/      site.ts, home.ts, pages.ts, navigation.ts, products.ts, services.ts, faq.ts
+lib/          cn.ts, metadata.ts, contact.ts, mailer.ts
 docs/         ARCHITECTURE.md
 ```
 
@@ -34,16 +35,16 @@ app  ──►  components  ──►  content, lib
 
 ## Keputusan utama
 
-| Topik                  | Keputusan                                                           | Alasan                                            |
-| ---------------------- | ------------------------------------------------------------------- | ------------------------------------------------- |
-| Rendering              | Semua halaman statis (prerender)                                    | Konten tidak berubah per request; cepat dan murah |
-| Interaktivitas         | Client Component hanya: MobileMenu, StatCounter, ContactForm        | Minimalkan JS di klien                            |
-| FAQ & dropdown desktop | `<details>` dan CSS `group-hover`/`focus-within`                    | Tanpa JS, aksesibel bawaan                        |
-| Konten                 | File TypeScript bertipe di `content/`                               | Tanpa CMS; mudah diubah dan dicek tipe            |
-| Validasi form          | Fungsi `validateContact` bersama (klien + server)                   | Satu sumber aturan, tanpa dependensi              |
-| Email                  | Resend lewat `fetch` di Route Handler                               | Tanpa SDK tambahan                                |
-| Gambar                 | `next/image`; saat ini hot-link dari situs lama via `lib/assets.ts` | Ganti ke `public/images` setelah aset diunduh     |
-| Metadata               | Helper `pageMetadata()` per halaman + `sitemap.ts` + `robots.ts`    | SEO konsisten                                     |
+| Topik                  | Keputusan                                                                  | Alasan                                            |
+| ---------------------- | -------------------------------------------------------------------------- | ------------------------------------------------- |
+| Rendering              | Semua halaman statis (prerender)                                           | Konten tidak berubah per request; cepat dan murah |
+| Interaktivitas         | Client Component hanya: MobileMenu, StatCounter, MissionCards, ContactForm | Minimalkan JS di klien                            |
+| FAQ & dropdown desktop | `<details>` dan CSS `group-hover`/`focus-within`                           | Tanpa JS, aksesibel bawaan                        |
+| Konten                 | File TypeScript bertipe di `content/`                                      | Tanpa CMS; mudah diubah dan dicek tipe            |
+| Validasi form          | Fungsi `validateContact` bersama (klien + server)                          | Satu sumber aturan, tanpa dependensi              |
+| Email                  | Resend lewat `fetch` di Route Handler                                      | Tanpa SDK tambahan                                |
+| Gambar                 | `next/image`; saat ini hot-link dari situs lama via `lib/assets.ts`        | Ganti ke `public/images` setelah aset diunduh     |
+| Metadata               | Helper `pageMetadata()` per halaman + `sitemap.ts` + `robots.ts`           | SEO konsisten                                     |
 
 ## Alur form kontak
 

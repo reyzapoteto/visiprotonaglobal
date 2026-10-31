@@ -11,7 +11,7 @@ export const aboutPage = {
     title: "Us",
     description:
       "From raw materials to finished packaging, PT Visi Protona Global provides seamless distribution of high-quality kraft paper, tailored to your business needs.",
-    image: "/images/about-hero.png",
+    image: "/images/about-hero.webp",
     imageAlt: "Kraft paper rolls in a warehouse",
   },
   intro: {
@@ -61,7 +61,7 @@ export const contactPage = {
     description:
       "Contact us for quotes, support, inquiries, or feedback, and we’ll get back to you as soon as possible.",
     cta: { label: "Contact Us", href: "#contact-form" },
-    image: "/images/contact-hero.png",
+    image: "/images/contact-hero.webp",
     imageAlt: "Visi Protona Global announcement",
   },
   info: { label: "Contact Us", title: "Contact Information" },

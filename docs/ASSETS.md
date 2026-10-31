@@ -16,10 +16,10 @@ File Figma: `3Bnbop8BjrqIrA2ofDYJr7` (VPG Project), page **Presentation**. Aset 
 | `icons/caret-down.svg`                                          | `61:1913`                           | FAQ                                            |
 | `icons/list.svg`                                                | mobile header `List` (`156:399`)    | Menu mobile                                    |
 | `icons/button-decor.svg`                                        | `71:397` (isi grup di dalam tombol) | Tombol utama                                   |
-| `about-hero.png`                                                | `132:291`                           | Hero About                                     |
+| `about-hero.webp`                                               | `132:291`                           | Hero About                                     |
 | `about-1.jpg`, `about-2.jpg`, `about-3.jpg`                     | `132:299`, `132:300`, `132:301`     | Foto di bawah "Who We Are"                     |
 | `mission-sustainability.jpg`                                    | `225:520` (gambar latar)            | Kartu Sustainability (aktif)                   |
-| `contact-hero.png`                                              | `155:91`                            | Hero Contact Us                                |
+| `contact-hero.webp`                                             | `155:91`                            | Hero Contact Us                                |
 | `icons/potted-plant.svg`, `handshake.svg`, `box-arrow-down.svg` | `225:522`, `225:530`, `225:538`     | Kartu Mission                                  |
 | `icons/phone.svg`, `envelope-simple.svg`, `map-trifold.svg`     | `156:180`, `156:183`, `156:186`     | Kartu kontak                                   |
 
