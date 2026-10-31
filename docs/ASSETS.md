@@ -45,14 +45,11 @@ Ekspor gambar kartu (frame bernama `Frame 21` / `Frame 17` di setiap item) sebag
 
 Sudah ada di `public/images`: aset homepage, logo, semua ikon, halaman About, Contact Us, dan seluruh gambar Raw Materials (hero dan 7 foto).
 
-**Masih kurang** (perlu ekspor dari Figma, kuota Figma MCP sedang habis):
+**Masih kurang:**
 
-- `mission-trust.jpg` dan `mission-flexibility.jpg` sementara dipotong dari screenshot desain (871 px lebar, agak buram di layar retina). Ganti dengan ekspor Figma dari frame `LISTING` `225:571` dan `225:599` kalau kuota sudah reset.
-- `products/hero-industrial-chemicals.jpg`, `hero-export-division.jpg`, `hero-finished-paper-packaging.jpg`
-- Industrial Chemicals: `hotmelt-adhesives`, `fatty-alcohol-ethoxylates`, `soap-noodles`, `alkyl-ketene-dimer`, `surfactants`
-- Export Division: `white-top-liner-board`, `saturating-kraft-paper`, `laid-paper`, `carbonless-paper`, `sublimation-paper`, `greaseproof-paper`
-- Finished Paper Packaging: `shopping-bags`, `food-bags`, `corrugated-bags-boxes`, `cement-bags`
-
-Semua berekstensi `.jpg` dan berada di `public/images/products/`.
+- `products/soap-noodles.jpg` (Industrial Chemicals, Soap Noodles): belum ada fotonya.
+- `mission-trust.jpg` dan `mission-flexibility.jpg` sementara dipotong dari screenshot desain (871 px lebar, agak buram di layar retina). Ganti dengan ekspor Figma dari frame `LISTING` `225:571` dan `225:599`.
+- Hero Industrial Chemicals dan Export Division sementara memakai foto biasa (`hero-industrial-chemicals.jpg`, `hero-export-division.jpg`), bukan cutout transparan seperti di Figma. Hero Finished Paper Packaging memakai `hero-raw-materials.jpg` (kotak kardus yang sama dengan di desain).
+- Foto produk lain berasal dari 21 foto yang Anda kirim (660 px lebar), jadi bisa terlihat kurang tajam di layar retina. Ganti dengan ekspor 2x dari Figma kalau tersedia.
 
 Cara ekspor manual di Figma: pilih layer, panel Export di kanan, pilih format (SVG untuk ikon dan logo, JPG untuk foto, PNG untuk hero), lalu Export.

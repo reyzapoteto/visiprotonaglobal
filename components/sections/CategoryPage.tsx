@@ -13,7 +13,6 @@ type CategoryPageProps = {
 
 export function CategoryPage({ slug }: CategoryPageProps) {
   const category = getCategory(slug);
-  const large = category.layout === "two";
 
   return (
     <>
@@ -40,7 +39,7 @@ export function CategoryPage({ slug }: CategoryPageProps) {
                 key={group.title ?? index}
                 className={cn(
                   "flex flex-col gap-8",
-                  index > 0 && "border-t border-line pt-8",
+                  group.divided && "border-t border-line pt-8",
                 )}
               >
                 {group.title && (
@@ -51,14 +50,15 @@ export function CategoryPage({ slug }: CategoryPageProps) {
                 <div
                   className={cn(
                     "grid gap-6 md:grid-cols-2",
-                    !large && "lg:grid-cols-3",
+                    group.columns === 3 && "lg:grid-cols-3",
+                    group.columns === 4 && "lg:grid-cols-4",
                   )}
                 >
                   {group.items.map((item) => (
                     <ProductItemCard
                       key={item.title}
                       item={item}
-                      large={large}
+                      large={group.columns === 2}
                     />
                   ))}
                 </div>

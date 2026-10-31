@@ -12,7 +12,7 @@ export function ProductItemCard({ item, large }: ProductItemCardProps) {
     <article className="flex flex-col gap-4">
       <div
         className={cn(
-          "relative overflow-hidden rounded-card bg-ink",
+          "relative overflow-hidden rounded-card bg-brand-100",
           large ? "aspect-[660/586]" : "aspect-[400/300]",
         )}
       >

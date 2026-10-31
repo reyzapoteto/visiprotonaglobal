@@ -6,6 +6,10 @@ export type ProductItem = {
 
 export type ProductGroup = {
   title?: string;
+  /** Cards per row on desktop; 2 renders large cards. */
+  columns: 2 | 3 | 4;
+  /** Draw a divider above this group. */
+  divided?: boolean;
   items: ProductItem[];
 };
 
@@ -24,8 +28,6 @@ export type ProductCategory = {
   /** Image on the homepage card. */
   image: string;
   heroImage: string;
-  /** "three" = 3-column cards; "two" = large 2-column cards. */
-  layout: "three" | "two";
   featured?: ProductItem & { highlights: ProductHighlight[] };
   groups: ProductGroup[];
 };
@@ -33,8 +35,9 @@ export type ProductCategory = {
 const img = (name: string) => `/images/products/${name}.jpg`;
 
 // Order matches the homepage grid. Everything comes from the Figma design.
-// TODO(verify): hero image of Industrial Chemicals and Export Division, and the
-// desktop layout of those two pages (only their mobile frames were readable).
+// TODO(verify): the Industrial Chemicals and Export Division heroes are plain
+// photos, not the cutouts from Figma; soap-noodles.jpg is still missing; and the
+// desktop layout of those two pages was built from their mobile frames.
 export const productCategories: ProductCategory[] = [
   {
     slug: "raw-materials",
@@ -44,7 +47,6 @@ export const productCategories: ProductCategory[] = [
       "Quality packaging foundations from selected raw materials for every industrial need.",
     image: "/images/product-raw-materials.jpg",
     heroImage: img("hero-raw-materials"),
-    layout: "three",
     featured: {
       title: "Sack Kraft Paper (Virgin & Recycled)",
       description:
@@ -73,6 +75,7 @@ export const productCategories: ProductCategory[] = [
     },
     groups: [
       {
+        columns: 3,
         items: [
           {
             title: "Bleached Sack Kraft Paper",
@@ -95,6 +98,7 @@ export const productCategories: ProductCategory[] = [
         ],
       },
       {
+        columns: 3,
         items: [
           {
             title: "Label Stickers",
@@ -126,9 +130,9 @@ export const productCategories: ProductCategory[] = [
       "Precision-engineered chemical solutions powering efficient and high-performance paper production.",
     image: "/images/product-industrial-chemicals.jpg",
     heroImage: img("hero-industrial-chemicals"),
-    layout: "three",
     groups: [
       {
+        columns: 2,
         items: [
           {
             title: "Hotmelt Adhesives",
@@ -142,6 +146,11 @@ export const productCategories: ProductCategory[] = [
               "Non-ionic surfactants derived from natural fatty alcohols, used as wetting agents, emulsifiers, and dispersants in pulp processing and paper coating formulations.",
             image: img("fatty-alcohol-ethoxylates"),
           },
+        ],
+      },
+      {
+        columns: 3,
+        items: [
           {
             title: "Soap Noodles",
             description:
@@ -172,10 +181,10 @@ export const productCategories: ProductCategory[] = [
       "Global-ready industrial and specialty paper solutions built for demanding markets worldwide.",
     image: "/images/product-export-division.jpg",
     heroImage: img("hero-export-division"),
-    layout: "three",
     groups: [
       {
         title: "Industrial Material Group",
+        columns: 2,
         items: [
           {
             title: "White Top Liner Board",
@@ -193,6 +202,8 @@ export const productCategories: ProductCategory[] = [
       },
       {
         title: "Technical & Business Paper Group",
+        columns: 4,
+        divided: true,
         items: [
           {
             title: "Laid Paper",
@@ -229,10 +240,10 @@ export const productCategories: ProductCategory[] = [
     summary:
       "Complete packaging solutions crafted from quality paper for every product and industry.",
     image: "/images/product-finished-packaging.jpg",
-    heroImage: img("hero-finished-paper-packaging"),
-    layout: "two",
+    heroImage: img("hero-raw-materials"),
     groups: [
       {
+        columns: 2,
         items: [
           {
             title: "Shopping Bags",
